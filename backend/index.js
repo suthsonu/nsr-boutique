@@ -18,6 +18,6 @@ app.use('/api/gallery', require('./src/routes/gallery'));
 app.use('/api/blogs', require('./src/routes/blogs'));
 app.use('/api/reviews', require('./src/routes/reviews'));
 
-app.listen(PORT, () => {
+app.listen(PORT, (0.0.0.0) => {
     console.log(`Server running on port ${PORT}`);
 });
