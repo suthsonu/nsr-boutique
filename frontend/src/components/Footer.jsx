@@ -12,7 +12,7 @@ export default function Footer() {
                             Premium women's boutique and custom tailoring services specializing in maggam work, designer dresses, and ethnic fashion in Gachibowli, Hyderabad.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="text-white hover:text-primary transition-colors">
+                            <a href="https://www.instagram.com/nsrfashionboutique_/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">
                                 <Instagram className="h-6 w-6" />
                             </a>
                             <a href="#" className="text-white hover:text-primary transition-colors">
