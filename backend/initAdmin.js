@@ -8,7 +8,7 @@ async function initAdmin() {
         const hash = await bcrypt.hash(password, 10);
 
         const existing = await db('admin_users').where({ email }).first();
-        if (!existing) {
+       if (!existing) {
     await db('admin_users').insert({ email, password: hash });
     console.log('Admin user created');
 } else {
