@@ -19,7 +19,7 @@ export default function AdminLogin() {
 
             if (res.ok) {
                 localStorage.setItem('token', data.token);
-                navigate('/admin/dashboard');
+                navigate('/nsr-portal-2026/dashboard');
             } else {
                 setError(data.message || 'Login failed');
             }
