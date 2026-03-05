@@ -4,7 +4,7 @@ const db = require('./src/models/db');
 async function initAdmin() {
     try {
         const email = 'admin@nsrboutique.com';
-        const password = 'admin';
+        const password = 'Sushmansr@26';
         const hash = await bcrypt.hash(password, 10);
 
         const existing = await db('admin_users').where({ email }).first();
