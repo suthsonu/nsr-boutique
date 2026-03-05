@@ -10,10 +10,10 @@ export default function ManageDresses() {
     const [editingId, setEditingId] = useState(null);
 
     const fetchDresses = () => {
-        fetch('http://localhost:5001/api/dresses')
+        fetch('https://nsr-boutique.onrender.com/api/dresses')
             .then(res => res.json())
             .then(setDresses);
-    };
+    }
 
     useEffect(() => fetchDresses(), []);
 

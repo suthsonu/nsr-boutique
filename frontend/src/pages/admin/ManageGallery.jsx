@@ -8,7 +8,7 @@ export default function ManageGallery() {
     const [loading, setLoading] = useState(false);
 
     const fetchGallery = () => {
-        fetch('http://localhost:5001/api/gallery')
+        fetch('https://nsr-boutique.onrender.com/api/gallery')
             .then(res => res.json())
             .then(setImages);
     };
