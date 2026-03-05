@@ -1,0 +1,21 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (108,60)<a class='flex items-center gap-2' href='/' />
+	[1] (124,60)<span >NSR />
+		[2] (146,60)<span >Boutique />
+[3] (411,60)<a class='text-dark hover:text-primary transition-colors font-medium' href='/'>Home />
+[4] (485,60)<a class='text-dark hover:text-primary transition-colors font-medium' href='/#services'>Services />
+[5] (571,60)<a class='text-dark hover:text-primary transition-colors font-medium' href='/#collection'>Collection />
+[6] (652,60)<a class='text-dark hover:text-primary transition-colors font-medium' href='/#gallery'>Gallery />
+[7] (716,60)<a class='text-dark hover:text-primary transition-colors font-medium' href='/#blog'>Blog />
+[8] (782,60)<a class='text-dark hover:text-primary transition-colors font-medium' href='/#contact'>Contact />
+[9] (903,60)<a class='bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-primaryDark transition-colors' href='https://wa.me/918106516947'>WhatsApp Order />
+NSR Fashion Boutique
+Women's Boutique & Custom Tailoring in Gachibowli
+[10] (331,674)<a class='bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-dark transition-all duration-300' href='tel:+918106516947'>Call Now />
+[11] (480,674)<a class='bg-primary hover:bg-primaryDark text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300' href='https://wa.me/918106516947'>WhatsApp Order />
+[12] (650,674)<a class='bg-accent hover:bg-yellow-600 text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300' href='#collection'>View Collection />
+
+</current_dom>

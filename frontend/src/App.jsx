@@ -1,0 +1,30 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import BlogDetail from './pages/BlogDetail';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import ManageDresses from './pages/admin/ManageDresses';
+import ManageGallery from './pages/admin/ManageGallery';
+import ManageBlogs from './pages/admin/ManageBlogs';
+import ManageReviews from './pages/admin/ManageReviews';
+import AuthRoute from './components/AuthRoute';
+
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/blog/:id" element={<BlogDetail />} />
+
+                <Route path="/admin" element={<AdminLogin />} />
+                <Route path="/admin/dashboard" element={<AuthRoute><AdminDashboard /></AuthRoute>} />
+                <Route path="/admin/dresses" element={<AuthRoute><ManageDresses /></AuthRoute>} />
+                <Route path="/admin/gallery" element={<AuthRoute><ManageGallery /></AuthRoute>} />
+                <Route path="/admin/blogs" element={<AuthRoute><ManageBlogs /></AuthRoute>} />
+                <Route path="/admin/reviews" element={<AuthRoute><ManageReviews /></AuthRoute>} />
+            </Routes>
+        </Router>
+    );
+}
+
+export default App;

@@ -1,0 +1,1 @@
+import t from"react";import o from"react-dom/client";import r from"./App.jsx";import"./index.css";o.createRoot(document.getElementById("root")).render(t.createElement(t.StrictMode,null,t.createElement(r,null)));
