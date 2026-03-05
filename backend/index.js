@@ -17,7 +17,7 @@ app.use('/api/dresses', require('./src/routes/dresses'));
 app.use('/api/gallery', require('./src/routes/gallery'));
 app.use('/api/blogs', require('./src/routes/blogs'));
 app.use('/api/reviews', require('./src/routes/reviews'));
-
+app.use('/api/admin', require('./src/routes/changePassword'));
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on port ${PORT}`);
 });
