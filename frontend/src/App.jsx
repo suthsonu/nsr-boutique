@@ -16,8 +16,8 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/blog/:id" element={<BlogDetail />} />
 
-                <Route path="/admin" element={<AdminLogin />} />
-                <Route path="/admin/dashboard" element={<AuthRoute><AdminDashboard /></AuthRoute>} />
+                <Route path="/nsr-portal-2026" element={<AdminLogin />} />
+                <Route path="/nsr-portal-2026/dashboard" element={<AuthRoute><AdminDashboard /></AuthRoute>} />
                 <Route path="/admin/dresses" element={<AuthRoute><ManageDresses /></AuthRoute>} />
                 <Route path="/admin/gallery" element={<AuthRoute><ManageGallery /></AuthRoute>} />
                 <Route path="/admin/blogs" element={<AuthRoute><ManageBlogs /></AuthRoute>} />
