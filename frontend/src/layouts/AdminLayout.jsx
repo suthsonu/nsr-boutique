@@ -7,15 +7,15 @@ export default function AdminLayout({ children, title }) {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        navigate('/admin');
+        navigate('/nsr-portal-2026');
     };
 
     const navs = [
-        { name: 'Dashboard', path: '/admin/dashboard', icon: LayoutDashboard },
-        { name: 'Dresses', path: '/admin/dresses', icon: Scissors },
-        { name: 'Gallery', path: '/admin/gallery', icon: ImageIcon },
-        { name: 'Blogs', path: '/admin/blogs', icon: FileText },
-        { name: 'Reviews', path: '/admin/reviews', icon: Star },
+        { name: 'Dashboard', path: '/nsr-portal-2026/dashboard', icon: LayoutDashboard },
+        { name: 'Dresses', path: '/nsr-portal-2026/dresses', icon: Scissors },
+        { name: 'Gallery', path: '/nsr-portal-2026/gallery', icon: ImageIcon },
+        { name: 'Blogs', path: '/nsr-portal-2026/blogs', icon: FileText },
+        { name: 'Reviews', path: '/nsr-portal-2026/reviews', icon: Star },
     ];
 
     return (
