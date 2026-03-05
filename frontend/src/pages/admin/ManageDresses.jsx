@@ -31,7 +31,7 @@ export default function ManageDresses() {
 
         try {
             const method = editingId ? 'PUT' : 'POST';
-            const url = editingId ? `http://localhost:5001/api/dresses/${editingId}` : 'http://localhost:5001/api/dresses';
+            const url = editingId ? `https://nsr-boutique.onrender.com/api/reviews/${id}/approve` : 'http://localhost:5001/api/dresses';
 
             await fetch(url, {
                 method,
@@ -64,7 +64,7 @@ export default function ManageDresses() {
     const handleDelete = async (id) => {
         if (!window.confirm('Are you sure you want to delete this dress?')) return;
         try {
-            await fetch(`http://localhost:5001/api/dresses/${id}`, {
+            await fetch(`https://nsr-boutique.onrender.com/api/reviews/${id}/approve`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
             });
@@ -153,7 +153,7 @@ export default function ManageDresses() {
                                     dresses.map(dress => (
                                         <tr key={dress.id} className="border-b last:border-0 hover:bg-gray-50 transition-colors">
                                             <td className="px-6 py-4">
-                                                <img src={`http://localhost:5001${dress.image_url}`} alt={dress.name} className="w-20 h-20 object-cover rounded-xl shadow-sm" />
+                                                <img src={`https://nsr-boutique.onrender.com/api/reviews/${id}/approve`} alt={dress.name} className="w-20 h-20 object-cover rounded-xl shadow-sm" />
                                             </td>
                                             <td className="px-6 py-4">
                                                 <div className="font-bold text-gray-800 text-lg mb-1">{dress.name}</div>
