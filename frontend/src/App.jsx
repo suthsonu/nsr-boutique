@@ -19,8 +19,8 @@ function App() {
                 <Route path="/nsr-portal-2026" element={<AdminLogin />} />
                 <Route path="/nsr-portal-2026/dashboard" element={<AuthRoute><AdminDashboard /></AuthRoute>} />
                 <Route path="/nsr-portal-2026/dresses" element={<AuthRoute><ManageDresses /></AuthRoute>} />
-                <Route path="/admin/gallery" element={<AuthRoute><ManageGallery /></AuthRoute>} />
-             <Route path="/nsr-portal-2026/blogs" element={<AuthRoute><ManageBlogs /></AuthRoute>} />
+                <Route path="/nsr-portal-2026/gallery" element={<AuthRoute><ManageGallery /></AuthRoute>} />
+                <Route path="/nsr-portal-2026/blogs" element={<AuthRoute><ManageBlogs /></AuthRoute>} />
                 <Route path="/nsr-portal-2026/reviews" element={<AuthRoute><ManageReviews /></AuthRoute>} />
             </Routes>
         </Router>
