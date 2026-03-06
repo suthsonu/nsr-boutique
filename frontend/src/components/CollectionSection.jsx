@@ -50,7 +50,7 @@ export default function CollectionSection() {
 
                 {/* Category Filters */}
                 <div className="flex flex-wrap justify-center gap-3 mb-12">
-                    {CATEGORIES.map(category => (
+                    {["All", ...new Set([...CATEGORIES.slice(1), ...dresses.map(d => d.category)].filter(Boolean))].map(category => (
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}

@@ -78,7 +78,7 @@ export default function ManageDresses() {
 
         setFormData({
             name: dress.name,
-            category: dress.category,
+            category: dress.category || "Royal Bridal Lehenga",
             description: dress.description || "",
             price: dress.price || ""
         });
@@ -156,6 +156,24 @@ export default function ManageDresses() {
                                 value={formData.name}
                                 onChange={e => setFormData({ ...formData, name: e.target.value })}
                             />
+
+                            <input
+                                required
+                                type="text"
+                                list="category-options"
+                                placeholder="Category (e.g., Royal Bridal Lehenga)"
+                                className="w-full px-4 py-2 border border-gray-200 rounded-xl"
+                                value={formData.category}
+                                onChange={e => setFormData({ ...formData, category: e.target.value })}
+                            />
+                            <datalist id="category-options">
+                                <option value="Royal Bridal Lehenga" />
+                                <option value="Bridal Sarees" />
+                                <option value="Party Wear" />
+                                <option value="Gowns" />
+                                <option value="Anarkali Suits" />
+                                <option value="Designer Lehengas" />
+                            </datalist>
 
                             <input
                                 type="number"
