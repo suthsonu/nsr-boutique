@@ -6,7 +6,7 @@ export default function ManageReviews() {
     const [reviews, setReviews] = useState([]);
 
     const fetchReviews = () => {
-        fetch('https://nsr-boutique.onrender.com/api/reviews', {
+        fetch('${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/reviews', {
             headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         })
             .then(res => res.json())
@@ -18,7 +18,7 @@ export default function ManageReviews() {
 
     const handleApprove = async (id) => {
         try {
-            await fetch(`https://nsr-boutique.onrender.com/api/reviews/${id}/approve`, {
+            await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/reviews/${id}/approve`, {
                 method: 'PUT',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             });
@@ -31,7 +31,7 @@ export default function ManageReviews() {
     const handleDelete = async (id) => {
         if (!window.confirm('Delete this review?')) return;
         try {
-            await fetch(`https://nsr-boutique.onrender.com/api/reviews/${id}`, {
+            await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/reviews/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             });

@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', [auth, upload.single('image')], async (req, res) => {
     const { title, content, meta_title, meta_description } = req.body;
-    const featured_image = req.file ? `/uploads/${req.file.filename}` : null;
+    const featured_image = req.file ? req.file.path : null;
     if (!featured_image) return res.status(400).json({ message: 'Image is required' });
 
     try {

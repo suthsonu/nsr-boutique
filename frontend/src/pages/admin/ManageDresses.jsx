@@ -7,7 +7,7 @@ export default function ManageDresses() {
     const [dresses, setDresses] = useState([]);
     const [formData, setFormData] = useState({
         name: '',
-        category: 'Royal Bridal Lehenga',
+        category: 'Lehengas',
         description: '',
         price: ''
     });
@@ -16,7 +16,7 @@ export default function ManageDresses() {
     const [loading, setLoading] = useState(false);
     const [editingId, setEditingId] = useState(null);
 
-    const API = "https://nsr-boutique.onrender.com";
+    const API = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
     const fetchDresses = () => {
         fetch(`${API}/api/dresses`)
@@ -78,7 +78,7 @@ export default function ManageDresses() {
 
         setFormData({
             name: dress.name,
-            category: dress.category || "Royal Bridal Lehenga",
+            category: dress.category || "Lehengas",
             description: dress.description || "",
             price: dress.price || ""
         });
@@ -97,7 +97,7 @@ export default function ManageDresses() {
 
         setFormData({
             name: "",
-            category: "Royal Bridal Lehenga",
+            category: "Lehengas",
             description: "",
             price: ""
         });
@@ -170,13 +170,12 @@ export default function ManageDresses() {
                                 />
                                 <p className="text-xs text-gray-500 mt-1 pl-1">You can type any new category name to create a new one.</p>
                                 <datalist id="category-options">
-                                    <option value="Royal Bridal Lehenga" />
-                                    <option value="Designer Half Saree" />
-                                    <option value="Bridal Gown Collection" />
-                                    <option value="Designer Maggam work" />
-                                    <option value="Designer Party Frock" />
-                                    <option value="Elegant Boutique Dress" />
-                                    <option value="Cotton Kurta Sets" />
+                                    <option value="Lehengas" />
+                                    <option value="Blouses" />
+                                    <option value="Half Sarees" />
+                                    <option value="Gowns" />
+                                    <option value="Party Wear" />
+                                    <option value="Kurta Sets" />
                                 </datalist>
                             </div>
 

@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', [auth, upload.single('image')], async (req, res) => {
     const { name, category, description, price } = req.body;
-    const image_url = req.file ? `/uploads/${req.file.filename}` : null;
+    const image_url = req.file ? req.file.path : null;
     if (!image_url) return res.status(400).json({ message: 'Image is required' });
 
     try {
@@ -37,7 +37,7 @@ router.put('/:id', [auth, upload.single('image')], async (req, res) => {
 
     // If a new image was uploaded, update the image_url as well
     if (req.file) {
-        updateData.image_url = `/uploads/${req.file.filename}`;
+        updateData.image_url = req.file.path;
     }
 
     try {

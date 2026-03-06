@@ -3,13 +3,12 @@ import { motion } from 'framer-motion';
 
 const CATEGORIES = [
     "All",
-    "Royal Bridal Lehenga",
-    "Designer Half Saree",
-    "Bridal Gown Collection",
-    "Designer Maggam work",
-    "Designer Party Frock",
-    "Elegant Boutique Dress",
-    "Cotton Kurta Sets"
+    "Lehengas",
+    "Blouses",
+    "Half Sarees",
+    "Gowns",
+    "Party Wear",
+    "Kurta Sets"
 ];
 
 export default function CollectionSection() {
@@ -18,7 +17,7 @@ export default function CollectionSection() {
     const [activeCategory, setActiveCategory] = useState("All");
 
     useEffect(() => {
-        fetch('https://nsr-boutique.onrender.com/api/dresses')
+        fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/dresses`)
             .then(res => res.json())
             .then(data => {
                 setDresses(data);
@@ -82,7 +81,7 @@ export default function CollectionSection() {
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col"
                             >
                                 <div className="relative h-80 overflow-hidden bg-gray-100">
-                                    <img src={`https://nsr-boutique.onrender.com${dress.image_url}`} alt={dress.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <img src={`${import.meta.env.VITE_API_URL || "http://localhost:5001"}${dress.image_url}`} alt={dress.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                                     <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-primary tracking-wide shadow-sm">
                                         {dress.category}
                                     </div>

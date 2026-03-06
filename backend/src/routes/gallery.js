@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', [auth, upload.single('image')], async (req, res) => {
-    const image_url = req.file ? `/uploads/${req.file.filename}` : null;
+    const image_url = req.file ? req.file.path : null;
     if (!image_url) return res.status(400).json({ message: 'Image is required' });
 
     try {

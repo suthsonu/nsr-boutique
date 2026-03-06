@@ -10,7 +10,7 @@ export default function ReviewsSection() {
     const [success, setSuccess] = useState(false);
 
     useEffect(() => {
-        fetch('https://nsr-boutique.onrender.com/api/reviews')
+        fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/reviews`)
             .then(res => res.json())
             .then(setReviews)
             .catch(console.error);
@@ -20,7 +20,7 @@ export default function ReviewsSection() {
         e.preventDefault();
         setSubmitting(true);
         try {
-            await fetch('https://nsr-boutique.onrender.com/api/reviews', {
+            await fetch('${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/reviews', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

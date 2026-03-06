@@ -8,7 +8,7 @@ export default function ManageGallery() {
     const [loading, setLoading] = useState(false);
 
     const fetchGallery = () => {
-        fetch('https://nsr-boutique.onrender.com/api/gallery')
+        fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/gallery`)
             .then(res => res.json())
             .then(setImages);
     };
@@ -24,7 +24,7 @@ export default function ManageGallery() {
         data.append('image', imageFile);
 
         try {
-            await fetch('https://nsr-boutique.onrender.com/api/gallery', {
+            await fetch('${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/gallery', {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
                 body: data
@@ -42,7 +42,7 @@ export default function ManageGallery() {
     const handleDelete = async (id) => {
         if (!window.confirm('Delete this image?')) return;
         try {
-            await fetch(`https://nsr-boutique.onrender.com/api/gallery/${id}`, {
+            await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/gallery/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
             });
@@ -82,7 +82,7 @@ export default function ManageGallery() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {images.map(img => (
                     <div key={img.id} className="relative group rounded-2xl overflow-hidden shadow-sm aspect-square bg-gray-100 border border-gray-100">
-                        <img src={`https://nsr-boutique.onrender.com${img.image_url}`} alt="Gallery" className="w-full h-full object-cover" />
+                        <img src={`${import.meta.env.VITE_API_URL || "http://localhost:5001"}${img.image_url}`} alt="Gallery" className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
                             <button onClick={() => handleDelete(img.id)} className="bg-red-500 text-white p-4 rounded-full hover:bg-red-600 shadow-2xl transition-transform hover:scale-110">
                                 <Trash2 size={24} />

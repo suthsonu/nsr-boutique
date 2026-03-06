@@ -11,9 +11,9 @@ export default function AdminDashboard() {
         const fetchStats = async () => {
             try {
                 const [dresses, gallery, blogs] = await Promise.all([
-                    fetch('https://nsr-boutique.onrender.com/api/dresses').then(res => res.json()),
-                    fetch('https://nsr-boutique.onrender.com/api/gallery').then(res => res.json()),
-                    fetch('https://nsr-boutique.onrender.com/api/blogs').then(res => res.json())
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/dresses`).then(res => res.json()),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/gallery`).then(res => res.json()),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/blogs`).then(res => res.json())
                 ])
                 setStats({ dresses: dresses.length, images: gallery.length, blogs: blogs.length });
                 setLoading(false);
