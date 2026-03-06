@@ -31,11 +31,16 @@ export default function ManageDresses() {
 
         try {
             const method = editingId ? 'PUT' : 'POST';
-            const url = editingId ? `https://nsr-boutique.onrender.com/api/reviews/${id}/approve` : 'https://nsr-boutique.onrender.com/api/dresses';
+
+            const url = editingId
+                ? `https://nsr-boutique.onrender.com/api/dresses/${editingId}`
+                : `https://nsr-boutique.onrender.com/api/dresses`;
 
             await fetch(url, {
                 method,
-                headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                },
                 body: data
             });
             cancelEdit();
