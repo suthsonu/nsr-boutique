@@ -42,18 +42,18 @@ export default function ManageBlogs() {
         }
     };
 
-    cconst handleDelete = async (id) => {
-        if (!window.confirm('Delete this review?')) return;
+    const handleDelete = async (id) => {
+        if (!window.confirm('Delete this blog post?')) return;
 
         try {
-            await fetch(`https://nsr-boutique.onrender.com/api/reviews/${id}`, {
+            await fetch(`https://nsr-boutique.onrender.com/api/blogs/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
             });
 
-            fetchReviews();
+            fetchBlogs();
 
         } catch (err) {
             console.error(err);
