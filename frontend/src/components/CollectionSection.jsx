@@ -9,7 +9,6 @@ const CATEGORIES = [
     "Designer Maggam work",
     "Designer Party Frock",
     "Elegant Boutique Dress",
-    "Handloom Kurta Sets",
     "Cotton Kurta Sets"
 ];
 

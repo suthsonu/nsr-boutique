@@ -157,23 +157,28 @@ export default function ManageDresses() {
                                 onChange={e => setFormData({ ...formData, name: e.target.value })}
                             />
 
-                            <input
-                                required
-                                type="text"
-                                list="category-options"
-                                placeholder="Category (e.g., Royal Bridal Lehenga)"
-                                className="w-full px-4 py-2 border border-gray-200 rounded-xl"
-                                value={formData.category}
-                                onChange={e => setFormData({ ...formData, category: e.target.value })}
-                            />
-                            <datalist id="category-options">
-                                <option value="Royal Bridal Lehenga" />
-                                <option value="Bridal Sarees" />
-                                <option value="Party Wear" />
-                                <option value="Gowns" />
-                                <option value="Anarkali Suits" />
-                                <option value="Designer Lehengas" />
-                            </datalist>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                                <input
+                                    required
+                                    type="text"
+                                    list="category-options"
+                                    placeholder="Select from list OR type a new category"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-xl bg-white"
+                                    value={formData.category}
+                                    onChange={e => setFormData({ ...formData, category: e.target.value })}
+                                />
+                                <p className="text-xs text-gray-500 mt-1 pl-1">You can type any new category name to create a new one.</p>
+                                <datalist id="category-options">
+                                    <option value="Royal Bridal Lehenga" />
+                                    <option value="Designer Half Saree" />
+                                    <option value="Bridal Gown Collection" />
+                                    <option value="Designer Maggam work" />
+                                    <option value="Designer Party Frock" />
+                                    <option value="Elegant Boutique Dress" />
+                                    <option value="Cotton Kurta Sets" />
+                                </datalist>
+                            </div>
 
                             <input
                                 type="number"
