@@ -158,23 +158,22 @@ export default function ManageDresses() {
                                     dresses.map(dress => (
                                         <tr key={dress.id} className="border-b last:border-0 hover:bg-gray-50 transition-colors">
                                             <td className="px-6 py-4">
-                                                <img src={`https://nsr-boutique.onrender.com/api/reviews/${id}/approve`} alt={dress.name} className="w-20 h-20 object-cover rounded-xl shadow-sm" />
-                                            </td>
+                                                <img src={`https://nsr-boutique.onrender.com${dress.image_url}`} alt={dress.name}   
                                             <td className="px-6 py-4">
-                                                <div className="font-bold text-gray-800 text-lg mb-1">{dress.name}</div>
-                                                <div className="text-sm">
-                                                    <span className="bg-gray-200 px-2 py-1 rounded text-gray-700 mr-2">{dress.category}</span>
-                                                    {dress.price && <span className="text-gray-600 font-medium">₹{dress.price}</span>}
-                                                </div>
-                                            </td>
-                                            <td className="px-6 py-4 font-medium text-right flex justify-end gap-2 items-center h-[112px]">
-                                                <button onClick={() => handleEdit(dress)} className="text-blue-500 hover:text-white p-2 hover:bg-blue-500 rounded-lg transition-colors border border-transparent hover:border-blue-600">
-                                                    Edit
-                                                </button>
-                                                <button onClick={() => handleDelete(dress.id)} className="text-red-500 hover:text-white p-2 hover:bg-red-500 rounded-lg transition-colors border border-transparent hover:border-red-600">
-                                                    <Trash2 size={20} />
-                                                </button>
-                                            </td>
+                                                    <div className="font-bold text-gray-800 text-lg mb-1">{dress.name}</div>
+                                                    <div className="text-sm">
+                                                        <span className="bg-gray-200 px-2 py-1 rounded text-gray-700 mr-2">{dress.category}</span>
+                                                        {dress.price && <span className="text-gray-600 font-medium">₹{dress.price}</span>}
+                                                    </div>
+                                                </td>
+                                                <td className="px-6 py-4 font-medium text-right flex justify-end gap-2 items-center h-[112px]">
+                                                    <button onClick={() => handleEdit(dress)} className="text-blue-500 hover:text-white p-2 hover:bg-blue-500 rounded-lg transition-colors border border-transparent hover:border-blue-600">
+                                                        Edit
+                                                    </button>
+                                                    <button onClick={() => handleDelete(dress.id)} className="text-red-500 hover:text-white p-2 hover:bg-red-500 rounded-lg transition-colors border border-transparent hover:border-red-600">
+                                                        <Trash2 size={20} />
+                                                    </button>
+                                                </td>
                                         </tr>
                                     ))
                                 )}
