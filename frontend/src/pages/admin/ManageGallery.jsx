@@ -24,7 +24,7 @@ export default function ManageGallery() {
         data.append('image', imageFile);
 
         try {
-            await fetch('${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/gallery', {
+            await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/gallery`, {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
                 body: data

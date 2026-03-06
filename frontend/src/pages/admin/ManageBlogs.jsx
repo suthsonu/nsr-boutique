@@ -26,7 +26,7 @@ export default function ManageBlogs() {
         data.append('image', image);
 
         try {
-            await fetch('${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/blogs', {
+            await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/blogs`, {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
                 body: data

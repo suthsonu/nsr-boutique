@@ -6,7 +6,7 @@ export default function ManageReviews() {
     const [reviews, setReviews] = useState([]);
 
     const fetchReviews = () => {
-        fetch('${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/reviews', {
+        fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}/api/reviews`, {
             headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         })
             .then(res => res.json())
