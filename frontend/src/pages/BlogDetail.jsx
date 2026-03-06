@@ -10,7 +10,7 @@ export default function BlogDetail() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5001/api/blogs/${id}`)
+        fetch(`https://nsr-boutique.onrender.com/api/blogs/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data);
@@ -58,7 +58,7 @@ export default function BlogDetail() {
                         <span>Published on {new Date(blog.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                     </div>
                     <img
-                        src={`http://localhost:5001${blog.featured_image}`}
+                        src={`https://nsr-boutique.onrender.com${blog.featured_image}`}
                         alt={blog.title}
                         className="w-full max-h-[500px] object-cover rounded-2xl mb-12 shadow-sm"
                     />

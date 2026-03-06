@@ -10,7 +10,7 @@ async function uploadImages() {
     const images = ['store1.png', 'store2.png', 'store3.png'];
 
     // Need to get an admin token first
-    const loginRes = await fetch('http://localhost:5001/api/auth/login', {
+    const loginRes = await fetch('https://nsr-boutique.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: 'admin@nsrboutique.com', password: 'admin' })
@@ -27,7 +27,7 @@ async function uploadImages() {
         const formData = new FormData();
         formData.append('image', fs.createReadStream(filePath));
 
-        const uploadRes = await fetch('http://localhost:5001/api/gallery', {
+        const uploadRes = await fetch('https://nsr-boutique.onrender.com/api/gallery', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,

@@ -31,7 +31,7 @@ export default function ManageDresses() {
 
         try {
             const method = editingId ? 'PUT' : 'POST';
-            const url = editingId ? `https://nsr-boutique.onrender.com/api/reviews/${id}/approve` : 'http://localhost:5001/api/dresses';
+            const url = editingId ? `https://nsr-boutique.onrender.com/api/reviews/${id}/approve` : 'https://nsr-boutique.onrender.com/api/dresses';
 
             await fetch(url, {
                 method,

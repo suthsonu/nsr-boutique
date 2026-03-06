@@ -7,7 +7,7 @@ export default function GallerySection() {
     const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5001/api/gallery')
+        fetch('https://nsr-boutique.onrender.com/api/gallery')
             .then(res => res.json())
             .then(data => setImages(data))
             .catch(err => console.error(err));
@@ -35,10 +35,10 @@ export default function GallerySection() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.4, delay: (i % 3) * 0.1 }}
                                 className="break-inside-avoid relative overflow-hidden rounded-xl cursor-pointer shadow-sm group"
-                                onClick={() => setSelectedImage(`http://localhost:5001${img.image_url}`)}
+                                onClick={() => setSelectedImage(`https://nsr-boutique.onrender.com${img.image_url}`)}
                             >
                                 <img
-                                    src={`http://localhost:5001${img.image_url}`}
+                                    src={`https://nsr-boutique.onrender.com${img.image_url}`}
                                     alt="Gallery Item"
                                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
