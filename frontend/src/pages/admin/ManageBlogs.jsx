@@ -107,7 +107,7 @@ export default function ManageBlogs() {
                     blogs.map(blog => (
                         <div key={blog.id} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between group hover:shadow-md hover:border-primary/20 transition-all duration-300">
                             <div className="flex items-center gap-6 flex-1">
-                                <img src={`${import.meta.env.VITE_API_URL || "http://localhost:5001"}${blog.featured_image}`} alt={blog.title} className="w-28 h-24 object-cover rounded-xl shadow-sm" />
+                                <img src={blog.featured_image} alt={blog.title} className="w-28 h-24 object-cover rounded-xl shadow-sm" />
                                 <div>
                                     <h4 className="font-bold text-xl mb-1.5 text-dark group-hover:text-primary transition-colors">{blog.title}</h4>
                                     <p className="text-sm text-gray-500 mb-3">Published: {new Date(blog.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>

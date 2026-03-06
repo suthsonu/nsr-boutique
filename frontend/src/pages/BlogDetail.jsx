@@ -58,7 +58,7 @@ export default function BlogDetail() {
                         <span>Published on {new Date(blog.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                     </div>
                     <img
-                        src={`${import.meta.env.VITE_API_URL || "http://localhost:5001"}${blog.featured_image}`}
+                        src={blog.featured_image}
                         alt={blog.title}
                         className="w-full max-h-[500px] object-cover rounded-2xl mb-12 shadow-sm"
                     />

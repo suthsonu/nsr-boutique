@@ -239,7 +239,7 @@ export default function ManageDresses() {
                                         <td className="px-6 py-4">
 
                                             <img
-                                                src={`${API}${dress.image_url}`}
+                                                src={dress.image_url}
                                                 alt={dress.name}
                                                 className="w-20 h-20 object-cover rounded-xl"
                                             />

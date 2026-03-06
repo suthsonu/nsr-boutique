@@ -38,7 +38,7 @@ export default function GallerySection() {
                                 onClick={() => setSelectedImage(`${import.meta.env.VITE_API_URL || "http://localhost:5001"}${img.image_url}`)}
                             >
                                 <img
-                                    src={`${import.meta.env.VITE_API_URL || "http://localhost:5001"}${img.image_url}`}
+                                    src={img.image_url}
                                     alt="Gallery Item"
                                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                                 />

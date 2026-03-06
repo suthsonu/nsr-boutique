@@ -41,7 +41,7 @@ function BlogListSection() {
                             className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
                         >
                             <div className="h-56 overflow-hidden">
-                                <img src={`${import.meta.env.VITE_API_URL || "http://localhost:5001"}${blog.featured_image}`} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                <img src={blog.featured_image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             </div>
                             <div className="p-6 flex flex-col flex-1">
                                 <h3 className="text-xl font-serif font-bold text-dark mb-3 line-clamp-2">{blog.title}</h3>
